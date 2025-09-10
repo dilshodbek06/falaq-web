@@ -1,0 +1,156 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  NEW
+  INPROGRESS
+  CANCELED
+  COMPLETED
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+model User {
+  id          String @id @default(cuid())
+  name        String
+  phoneNumber String @unique
+  password    String
+  role        Role   @default(USER)
+
+  orders      Order[]
+  bookRatings BookRating[]
+}
+
+model Book {
+  id          String      @id @default(cuid())
+  title       String
+  description String
+  about       String
+  imageUrl    String
+  oldPrice    Int?
+  salePrice   Int
+  orderItems  OrderBook[]
+  isActive    Boolean     @default(true)
+
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull) // ✅ better than Restrict
+
+  bookTypeId String?
+  bookType   BookType? @relation(fields: [bookTypeId], references: [id], onDelete: SetNull)
+
+  authorId String?
+  author   Author? @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  pages   BookPage[]
+  ratings BookRating[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id       String  @id @default(cuid())
+  name     String  @unique
+  isActive Boolean @default(true)
+  books    Book[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  status       OrderStatus @default(NEW)
+  phoneNumber  String
+  fullName     String
+  locationName String
+  latitude     Float
+  longitude    Float
+  totalPrice   Int
+  orderItems   OrderBook[]
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OrderBook {
+  id       String @id @default(cuid())
+  quantity Int
+  price    Int
+
+  bookId String
+  book   Book   @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AdBanner {
+  id       String  @id @default(cuid())
+  title    String
+  imageUrl String
+  linkUrl  String?
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BookType {
+  id    String @id @default(cuid())
+  name  String @unique
+  books Book[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Author {
+  id         String  @id @default(cuid())
+  fullName   String
+  definition String
+  isActive   Boolean @default(true)
+  books      Book[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BookPage {
+  id         String @id @default(cuid())
+  pageNumber Int
+  content    String @db.Text
+
+  bookId String
+  book   Book   @relation(fields: [bookId], references: [id], onDelete: Cascade) // ✅ Link pages to book
+}
+
+model BookRating {
+  id     String @id @default(cuid())
+  rating Int
+  review String
+
+  bookId String
+  book   Book   @relation(fields: [bookId], references: [id], onDelete: Cascade) // ✅ Link ratings to book
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull) // ✅ optional user who gave rating
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
