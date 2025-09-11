@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 
-const SignUpPage = () => {
+const SignInPage = () => {
   return (
     <div className="h-screen flex lg:flex-row items-center p-4 md:p-[10px] gap-5">
       <div className="w-full max-w-[705px] h-auto md:h-full rounded-[16px] bg-[#7BCFEB] justify-center items-center hidden md:flex">
@@ -18,33 +18,14 @@ const SignUpPage = () => {
       <div className=" w-full h-full flex justify-center items-center">
         <div className="max-w-[24rem]  w-full">
           <h1 className="text-center text-gray-900 font-semibold text-xl md:text-2xl">
-            Ro&apos;yhatdan o&apos;tish
+            Kirish
           </h1>
           <div className="mt-3">
-            <div>
-              <label htmlFor="name" className="text-gray-700 text-sm">
-                To&apos;liq ism
-              </label>
-              <br />
-              <Input
-                type="text"
-                id="name"
-                placeholder="ism familiya..."
-                className="mt-1 py-6"
-              />
-            </div>
-            <div className="mt-2">
-              <label htmlFor="phone" className="text-gray-700 text-sm">
-                Telefon raqam
-              </label>
-              <br />
-              <Input
-                type="tel"
-                id="phone"
-                placeholder="+998..."
-                className="mt-1 py-6"
-              />
-            </div>
+            <label htmlFor="phone" className="text-gray-700 text-sm">
+              Telefon raqam
+            </label>
+            <br />
+            <Input id="phone" placeholder="+998" className="mt-2 py-6" />
             <div className="mt-2">
               <label htmlFor="password" className="text-gray-700 text-sm">
                 Parol
@@ -85,4 +66,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignInPage;
