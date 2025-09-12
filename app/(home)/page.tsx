@@ -1,5 +1,6 @@
 import AdsSection from "@/components/ads-section";
 import Benefits from "@/components/benefits";
+import BookShowcaseSection from "@/components/For-you";
 import Header from "@/components/header";
 import MobileNavbar from "@/components/MobileNavbar";
 
@@ -23,6 +24,9 @@ export default function Home() {
         <Benefits />
       </div>
       {/* For you and Famous Section */}
+      <div>
+        <BookShowcaseSection />
+      </div>
       {/* Books with type Section */}
       {/* Footer */}
     </div>

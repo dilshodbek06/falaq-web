@@ -27,7 +27,7 @@ const features = [
 export default function Benefits() {
   return (
     <section className="bg-[#E9F2F8] py-7">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="container max-w-7xl mx-auto px-3 sm:px-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {features.map((feature, index) => (
           <div
             key={index}
