@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 
 const AdsSection = () => {
   return (
-    <div className="container mx-auto max-w-7xl border py-6 md:py-14 px-3 md:px-1">
+    <div className="container mx-auto max-w-7xl py-6 pb-8 md:py-14 px-3 md:px-1">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
         {/* CENTER CARD - First on mobile/tablet, middle on desktop */}
         <div className="lg:col-span-2 lg:order-2">
@@ -50,11 +50,11 @@ const AdsSection = () => {
                 <h2 className="text-white text-xl sm:text-3xl font-bold">
                   Best Seller
                 </h2>
-                <p className="text-white/90 text-xs sm:text-[15px] mb-2 sm:mb-4">
+                <p className="hidden sm:block text-white/90 text-xs sm:text-[15px] mb-2 sm:mb-4">
                   Bu hafta eng ko&apos;p sotilgan
                 </p>
 
-                <Carousel className="w-full">
+                <Carousel className="w-full mt-2 sm:mt-0">
                   <CarouselContent>
                     {[1, 2, 3].map((item) => (
                       <CarouselItem key={item}>
@@ -92,11 +92,11 @@ const AdsSection = () => {
                 <h2 className="text-white text-xl sm:text-3xl font-bold">
                   Chegirma
                 </h2>
-                <p className="text-white/90 text-xs sm:text-[15px] mb-2 sm:mb-4">
+                <p className="hidden sm:block text-white/90 text-xs sm:text-[15px] mb-2 sm:mb-4">
                   Bu hafta eng ko&apos;p sotilgan
                 </p>
 
-                <Carousel className="w-full">
+                <Carousel className="w-full mt-2 sm:mt-0">
                   <CarouselContent>
                     {[1, 2, 3].map((item) => (
                       <CarouselItem key={item}>
