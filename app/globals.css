@@ -124,3 +124,12 @@
 @theme {
   --breakpoint-xs: 30rem;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}

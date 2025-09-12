@@ -1,5 +1,7 @@
 import AdsSection from "@/components/ads-section";
 import Benefits from "@/components/benefits";
+import BookWithTypeWrapper from "@/components/BookWithTypeWrapper";
+import Footer from "@/components/footer";
 import BookShowcaseSection from "@/components/For-you";
 import Header from "@/components/header";
 import MobileNavbar from "@/components/MobileNavbar";
@@ -28,7 +30,13 @@ export default function Home() {
         <BookShowcaseSection />
       </div>
       {/* Books with type Section */}
+      <div>
+        <BookWithTypeWrapper />
+      </div>
       {/* Footer */}
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
