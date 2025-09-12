@@ -1,3 +1,4 @@
+import AdsSection from "@/components/ads-section";
 import Header from "@/components/header";
 import MobileNavbar from "@/components/MobileNavbar";
 
@@ -10,6 +11,14 @@ export default function Home() {
       <div className="xs:hidden">
         <MobileNavbar />
       </div>
+      {/* Ads Section */}
+      <div>
+        <AdsSection />
+      </div>
+      {/* Benefits Section */}
+      {/* For you and Famous Section */}
+      {/* Books with type Section */}
+      {/* Footer */}
     </div>
   );
 }
