@@ -3,31 +3,33 @@ import Image from "next/image";
 
 const Product = () => {
   return (
-    <div className="max-w-[194px] shrink-0 w-full rounded-md cursor-pointer hover:scale-[101%] transition-all duration-300">
-      <div className="max-w-[194px] relative flex justify-center items-center">
+    <div className="w-full rounded-xl cursor-pointer hover:scale-[101%] transition-transform duration-300">
+      {/* Image wrapper */}
+      <div className="relative flex justify-center items-center w-full aspect-[3/4] bg-[#F7F7F7] rounded-lg overflow-hidden">
         <Image
-          src={"/images/book2.png"}
-          alt=""
-          width={194}
-          height={271}
-          quality={100}
+          src="/images/book2.png"
+          alt="Book Cover"
+          fill
+          className="object-cover transition-opacity duration-300"
           priority
-          className={`w-full transition-opacity duration-300 `}
         />
-        <div className="w-[35px] h-[35px] rounded-full flex justify-center items-center absolute top-2 right-3 bg-white">
-          <Heart size={18} />
+        {/* Heart Icon */}
+        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white flex justify-center items-center shadow-md">
+          <Heart className="size-4 sm:size-5" />
         </div>
       </div>
-      <div>
-        <p className="line-clamp-1 text-lg font-semibold mt-2">
+
+      {/* Texts */}
+      <div className="mt-2">
+        <p className="line-clamp-1 text-base sm:text-lg font-semibold">
           Mashaqqatlar sari
         </p>
-        <p className="text-[#7C7C7C] text-[13px] line-clamp-1">
+        <p className="text-[#7C7C7C] text-xs sm:text-sm line-clamp-1">
           Abdulloh Muhammad
         </p>
-        <div className="flex items-center justify-between mt-1">
-          <p className="font-bold text-xl mt-2 text-[#207BBE]">24 000 so’m</p>
-        </div>
+        <p className="font-bold text-[#207BBE] text-base sm:text-xl mt-1">
+          24 000 so’m
+        </p>
       </div>
     </div>
   );

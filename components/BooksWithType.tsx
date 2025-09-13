@@ -15,7 +15,7 @@ const BooksWithType = () => {
           <ChevronRight size={20} className="-ml-1 mt-[3px] text-black" />
         </Button>
       </div>
-      <div className="mt-6 gap-5 flex flex-nowrap overflow-x-auto scrollbar-hide transition-all duration-300 overflow-y-hidden">
+      <div className="mt-6 grid grid-flow-col auto-cols-[minmax(150px,1fr)] sm:auto-cols-[minmax(180px,1fr)] md:auto-cols-[minmax(200px,1fr)] gap-5 overflow-x-auto scrollbar-hide overflow-y-hidden">
         <Product />
         <Product />
         <Product />
