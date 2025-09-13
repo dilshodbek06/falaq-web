@@ -1,14 +1,13 @@
 import AdsSection from "@/components/ads-section";
 import Benefits from "@/components/benefits";
 import BookWithTypeWrapper from "@/components/BookWithTypeWrapper";
-import Footer from "@/components/footer";
 import BookShowcaseSection from "@/components/For-you";
 import Header from "@/components/header";
 import MobileNavbar from "@/components/MobileNavbar";
 
 export default function Home() {
   return (
-    <div className="xs:bg-[#E9F2F8]">
+    <div className="sm:bg-[#E9F2F8]">
       {/* Header */}
       <div className="hidden xs:block">
         <Header />
@@ -34,9 +33,6 @@ export default function Home() {
         <BookWithTypeWrapper />
       </div>
       {/* Footer */}
-      <div>
-        <Footer />
-      </div>
     </div>
   );
 }
