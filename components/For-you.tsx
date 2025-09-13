@@ -39,6 +39,7 @@ type CarouselButtonProps = {
 const CarouselPrevious: React.FC<CarouselButtonProps> = ({ onClick }) => {
   return (
     <button
+      aria-label="left"
       onClick={onClick}
       className="absolute -left-4 top-[43%] -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-105"
     >
@@ -50,6 +51,7 @@ const CarouselPrevious: React.FC<CarouselButtonProps> = ({ onClick }) => {
 const CarouselNext: React.FC<CarouselButtonProps> = ({ onClick }) => {
   return (
     <button
+      aria-label="right"
       onClick={onClick}
       className="absolute -right-4 top-[43%] -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-105"
     >

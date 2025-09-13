@@ -24,6 +24,7 @@ const MobileNavbar = () => {
           </div>
         </div>
         <Button
+          aria-label="Heart"
           size={"icon"}
           className="cursor-pointer bg-blue-100 hover:bg-blue-100 w-10 h-10"
         >

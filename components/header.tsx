@@ -36,6 +36,7 @@ const Header = () => {
             />
           </Button>
           <Button
+            aria-label="User"
             size={"icon"}
             variant={"link"}
             className="cursor-pointer group"

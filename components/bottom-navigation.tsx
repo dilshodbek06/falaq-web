@@ -2,7 +2,8 @@
 
 import { House, Search, Trash2, User } from "lucide-react";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 
 const BottomNavigation = () => {
   const pathName = usePathname();
